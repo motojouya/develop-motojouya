@@ -33,6 +33,21 @@ jobs:
       - run: terraform init -backend-config="region=$TF_VAR_region" -backend-config="bucket=${{ secrets.bucket_name }}" -backend-config="key=${{ secrets.bucket_key }}"
       - run: terraform validate
       - run: terraform plan -no-color -lock-timeout=60m
+        env:
+          TF_VAR_instance_type    : ${{ vars.instance_type }}
+          TF_VAR_max_price        : ${{ vars.max_price }}
+          TF_VAR_availability_zone: ${{ secrets.availability_zone }}
+          TF_VAR_ami_id           : ${{ secrets.ami_id }}
+          TF_VAR_device_name      : ${{ secrets.device_name }}
+          TF_VAR_domain           : ${{ secrets.domain }}
+          TF_VAR_subnet_id        : ${{ secrets.subnet_id }}
+          TF_VAR_ssh_port         : ${{ secrets.ssh_port }}
+          TF_VAR_security_group_id: ${{ secrets.security_group_id }}
+          TF_VAR_volume_id        : ${{ secrets.volume_id }}
+          TF_VAR_keypair_name     : ${{ secrets.keypair_name }}
+          TF_VAR_profile_name     : ${{ secrets.profile_name }}
+          TF_VAR_user_name        : ${{ secrets.user_name }}
+          TF_VAR_hosted_zone_id   : ${{ secrets.hosted_zone_id }}
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && github.event.schedule == '30 23 * * 0-4') || (github.event_name == 'workflow_dispatch' && inputs.do_apply))
