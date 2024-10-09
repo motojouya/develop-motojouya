@@ -64,11 +64,11 @@ chgrp $username /home/$username
 chown -R $username /home/$username/.ssh
 chgrp -R $username /home/$username/.ssh
 
-# # let's encrypt
-# cd /etc
-# cp /home/$username/letsencrypt.tar.gz letsencrypt.tar.gz
-# tar -xzf letsencrypt.tar.gz
-# cd /home/ubuntu
+# let's encrypt
+cd /etc
+cp /home/$username/letsencrypt.tar.gz letsencrypt.tar.gz
+tar -xzf letsencrypt.tar.gz
+cd /home/ubuntu
 
 # nginx
 curl https://raw.githubusercontent.com/motojouya/develop-motojouya/main/resources/http.conf.tmpl -O
@@ -110,6 +110,3 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
   tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
 apt update
 apt-get install terraform
-
-# # others
-# /home/$username/.fzf/install --bin
