@@ -29,6 +29,6 @@ EOF
 
 resource "aws_volume_attachment" "develop_ebs_attachment" {
   device_name = var.device_name
-  volume_id   = var.volume_id
+  volume_id   = "vol-${var.volume_id}"
   instance_id = aws_instance.develop.id
 }
