@@ -15,7 +15,7 @@ cd /home/ubuntu
 
 # apt
 apt-get update
-apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl ca-certificates gnupg software-properties-common nginx certbot
+apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl unzip ca-certificates gnupg software-properties-common nginx certbot
 # apt-get install -y python-certbot-nginx
 
 # aws cli
@@ -35,8 +35,8 @@ cp ssh.socket.init /lib/systemd/system/ssh.socket
 systemctl restart ssh.socket
 systemctl daemon-reload
 # again but mystery
-# systemctl restart ssh.socket
-# systemctl daemon-reload
+systemctl restart ssh.socket
+systemctl daemon-reload
 
 # mkdir /home/$username
 # # mkfs -t xfs $device
