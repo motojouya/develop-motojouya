@@ -15,7 +15,7 @@ cd /home/ubuntu
 
 # apt
 apt-get update
-apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl unzip nvme-cli ca-certificates gnupg software-properties-common nginx certbot
+apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl unzip nvme-cli ca-certificates gnupg software-properties-common nginx certbot amazon-ec2-utils
 # apt-get install -y python-certbot-nginx
 
 # aws cli
