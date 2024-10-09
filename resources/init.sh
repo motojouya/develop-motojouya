@@ -15,13 +15,14 @@ cd /home/ubuntu
 
 # apt
 apt-get update
-apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl unzip nvme-cli ca-certificates gnupg software-properties-common nginx certbot amazon-ec2-utils
+apt-get install -y jq tmux tree xauth git silversearcher-ag sqlite3 curl unzip nvme-cli ca-certificates gnupg software-properties-common nginx certbot
 # apt-get install -y python-certbot-nginx
 
 # aws cli
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 ./aws/install
+apt-get install -y amazon-ec2-utils
 
 # sshd
 curl https://raw.githubusercontent.com/motojouya/develop-motojouya/main/resources/sshd_config.tmpl -O
