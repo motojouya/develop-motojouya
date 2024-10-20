@@ -74,6 +74,7 @@ cd /home/ubuntu
 curl https://raw.githubusercontent.com/motojouya/develop-motojouya/main/resources/http.conf.tmpl -O
 sed -e s/{%domain%}/$domain/g http.conf.tmpl > http.conf.init
 cp http.conf.init /etc/nginx/conf.d/http.conf
+systemctl stop nginx.service
 systemctl start nginx.service
 
 # register route53
