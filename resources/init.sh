@@ -88,6 +88,11 @@ aws route53 change-resource-record-sets --hosted-zone-id $hosted_zone_id --chang
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs
 npm install -g npx typescript typescript-language-server
 
+# golang
+# already installed at $HOME/go/bin
+# go install golang.org/x/tools/cmd/goimports@latest
+# go install honnef.co/go/tools/cmd/staticcheck@latest
+
 # docker
 mkdir -m 0755 -d /etc/apt/keyrings # install?
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
