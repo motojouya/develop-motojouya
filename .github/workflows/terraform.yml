@@ -2,8 +2,8 @@ name: Terraform
 
 on:
   schedule:
-    - cron:  '30 23 * * 0-4'
-    - cron:  '0 1 * * 1-5'
+    - cron:  '30 23 * * 0-5'
+    - cron:  '0 1 * * 1-6'
   workflow_dispatch:
     inputs:
       do_apply:
@@ -50,7 +50,7 @@ jobs:
           TF_VAR_hosted_zone_id   : ${{ secrets.hosted_zone_id }}
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && github.event.schedule == '30 23 * * 0-4') || (github.event_name == 'workflow_dispatch' && inputs.do_apply))
+        if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && github.event.schedule == '30 23 * * 0-5') || (github.event_name == 'workflow_dispatch' && inputs.do_apply))
         run: terraform apply -auto-approve -input=false
         env:
           TF_VAR_instance_type    : ${{ vars.instance_type }}
@@ -69,7 +69,7 @@ jobs:
           TF_VAR_hosted_zone_id   : ${{ secrets.hosted_zone_id }}
 
       - name: Terraform Destroy
-        if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1-5') || (github.event_name == 'workflow_dispatch' && !inputs.do_apply))
+        if: github.ref == 'refs/heads/main' && ((github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1-6') || (github.event_name == 'workflow_dispatch' && !inputs.do_apply))
         run: terraform destroy -auto-approve -input=false
         env:
           TF_VAR_instance_type    : ${{ vars.instance_type }}
