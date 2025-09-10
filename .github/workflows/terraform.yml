@@ -36,6 +36,7 @@ jobs:
         env:
           TF_VAR_instance_type    : ${{ vars.instance_type }}
           TF_VAR_max_price        : ${{ vars.max_price }}
+          TF_VAR_root_volume_size : ${{ vars.root_volume_size }}
           TF_VAR_availability_zone: ${{ secrets.availability_zone }}
           TF_VAR_ami_id           : ${{ secrets.ami_id }}
           TF_VAR_device_name      : ${{ secrets.device_name }}
@@ -55,6 +56,7 @@ jobs:
         env:
           TF_VAR_instance_type    : ${{ vars.instance_type }}
           TF_VAR_max_price        : ${{ vars.max_price }}
+          TF_VAR_root_volume_size : ${{ vars.root_volume_size }}
           TF_VAR_availability_zone: ${{ secrets.availability_zone }}
           TF_VAR_ami_id           : ${{ secrets.ami_id }}
           TF_VAR_device_name      : ${{ secrets.device_name }}
@@ -74,6 +76,7 @@ jobs:
         env:
           TF_VAR_instance_type    : ${{ vars.instance_type }}
           TF_VAR_max_price        : ${{ vars.max_price }}
+          TF_VAR_root_volume_size : ${{ vars.root_volume_size }}
           TF_VAR_availability_zone: ${{ secrets.availability_zone }}
           TF_VAR_ami_id           : ${{ secrets.ami_id }}
           TF_VAR_device_name      : ${{ secrets.device_name }}

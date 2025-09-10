@@ -10,6 +10,10 @@ resource "aws_instance" "develop" {
   key_name             = var.keypair_name
   iam_instance_profile = var.profile_name
 
+  root_block_device {
+    volume_size = var.root_volume_size
+  }
+
   instance_market_options {
     market_type = "spot"
     spot_options {

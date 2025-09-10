@@ -9,6 +9,7 @@ variable "security_group_id" {}
 variable "instance_type" {}
 variable "max_price" {}
 variable "ami_id" {}
+variable "root_volume_size" {}
 # variable "tags" {
 #   type        = list(string)
 # }
